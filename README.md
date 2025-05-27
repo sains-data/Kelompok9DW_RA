@@ -1,84 +1,248 @@
 # 🏫💡 Data Warehouse Sekolah Dasar Bombardilo Crocodilo
 
-Selamat datang di repositori proyek **Data Warehouse** untuk Sekolah Dasar *Bombardilo Crocodilo*! 🎒📚  
-Proyek ini merupakan bagian dari tugas mata kuliah *Pergudangan Data* oleh **Kelompok 9 - RA** di **Institut Teknologi Sumatera (ITERA)**.
+Repositori ini berisi proyek pembangunan sistem **Data Warehouse (DW)** untuk mendukung pengelolaan data akademik dan administrasi di **Sekolah Dasar Bombardilo Crocodilo**.
 
-> Sistem ini bertujuan menyatukan data akademik, kehadiran, dan administrasi siswa dalam satu platform terstruktur untuk membantu sekolah dalam mengambil keputusan yang lebih baik dan cepat. 📈
-
----
-
-## 🚀 Ringkasan Proyek
-
-| 🔍 Misi | 🎯 Tujuan | 📁 File |
-|--------|----------|---------|
-| **Misi 1** | Identifikasi kebutuhan bisnis & stakeholder sekolah | [📄 Tugas Misi 1](https://drive.google.com/file/d/1sAMgW4S-swRfxVZtu5HGwNi2iIXlzt_3/view?usp=drive_link) |
-| **Misi 2** | Desain konseptual Star Schema dan struktur DW | [📄 Tugas Misi 2](https://drive.google.com/file/d/1xPL2LDic8q7QDZEgqZd6saUF2DF3MKmX/view?usp=drive_link) |
-| **Misi 3** | Implementasi logikal, fisikal, dan proses ETL | [📄 Tugas Misi 3](https://drive.google.com/file/d/1OQJiCMFjdHNHARC1laVSuNWa_gBYHv50/view?usp=drive_link) |
-
-📊 Dataset SQL: [Klik di sini](https://bit.ly/DatasetSQL_DW_Kel9_RA)
+🛠️ Dibuat oleh: **Kelompok 9 - RA**  
+🎓 Program Studi Sains Data, ITERA  
+📅 Tahun: 2025
 
 ---
 
-## 🧩 Arsitektur & Skema Data
+## 1. 🔎 Ringkasan Proyek dan Latar Belakang
 
-### ⭐ Star Schema
-
-- **Fakta:** Nilai siswa
-- **Dimensi:** Siswa, Guru, Mata Pelajaran, Waktu
-- Mendukung analisis: nilai rata-rata per guru, per semester, hingga status kelulusan siswa.
-
-📌 Cocok untuk pelaporan ke Dinas Pendidikan, evaluasi guru, dan monitoring siswa.
-
-### 🛠️ ETL & Pipeline
-
-- **Extract**: Data dari Buku Induk, Absensi, dan Nilai.
-- **Transform**: Standarisasi format, hitung rata-rata, validasi status kelulusan.
-- **Load**: Data dimuat ke tabel dimensi dan fakta, dioptimalkan dengan **index** dan **partisi**.
-
-> Implementasi dilakukan menggunakan SQL & Python 🐍
+Pengelolaan data di sekolah masih bergantung pada catatan manual dan spreadsheet terpisah. Ini menyulitkan pelaporan ke Dinas Pendidikan serta pemantauan kinerja siswa.  
+Melalui sistem Data Warehouse, informasi penting seperti nilai, kehadiran, dan profil siswa akan terintegrasi dan siap dianalisis menggunakan tools visualisasi dan query SQL.
 
 ---
 
-## 🧠 Insight dari Proyek
+## 2. 🎯 Tujuan dan Ruang Lingkup Sistem
 
-✅ Integrasi data yang awalnya tersebar di Excel & buku fisik  
-✅ Analisis cepat nilai dan kehadiran siswa per guru  
-✅ Automasi laporan akademik ke Dinas Pendidikan  
-✅ Dasar awal pengembangan **dashboard BI** di masa depan
+**Tujuan:**
+- Mengintegrasikan data dari berbagai sumber menjadi satu sistem DW.
+- Menyediakan sistem pelaporan dan analisis akademik.
+- Meningkatkan efisiensi pelaporan dan pemantauan.
 
----
-
-## 👥 Tim Pengembang – Kelompok 9 RA
-
-| Nama | NIM |
-|------|-----|
-| Dhea Amelia Putri | 122450004 |
-| Marleta Cornelia Leander | 122450092 |
-| Berliyana Kesuma Hati | 121450086 |
-| Najla Juwairia | 122450037 |
-| Nurul Alfajar Gumel | 122450127 |
-| Tarisah | 121450141 |
+**Ruang Lingkup:**
+- Nilai akademik siswa
+- Informasi guru & mata pelajaran
+- Kehadiran & status kelulusan
 
 ---
 
-## 📌 Teknologi yang Digunakan
+## 3. 🧰 Metodologi
 
-- **SQL** untuk pembuatan tabel, view, dan indexing
-- **Python (Pandas)** untuk proses ETL
-- **Spreadsheet & CSV** sebagai sumber data awal
-- **Model: Star Schema** (multidimensi, ringkas, scalable)
+### Pendekatan:
+Model **Waterfall** dengan tahapan:
+1. Misi 1 – Analisis kebutuhan dan stakeholder
+2. Misi 2 – Desain konseptual (Star Schema)
+3. Misi 3 – Desain logikal & fisikal, proses ETL
+4. Misi 4 – Implementasi & evaluasi
+
+### Tools:
+- SQL (MySQL/PostgreSQL)
+- Python (ETL dengan Pandas)
+- Excel/CSV
+- BI Tools (Power BI / Excel)
 
 ---
 
-## 🏁 Kesimpulan
+## 4. 📋 Analisis Kebutuhan (Misi 1)
 
-Dengan pendekatan multidimensi dan strategi ETL yang sistematis, proyek ini berhasil merancang solusi data warehouse sederhana yang mampu menangani permasalahan data di lingkungan sekolah dasar.
+**Stakeholder:**
+- Kepala Sekolah
+- Kurikulum
+- Administrasi
+- Kesiswaan
+- Dinas Pendidikan
 
-> 💬 *“Data bukan hanya sekadar angka, tapi cerminan kualitas pendidikan.”*
+**Kebutuhan:**
+- Pelacakan nilai siswa per semester.
+- Pemantauan kehadiran dan kegiatan siswa.
+- Laporan untuk pihak eksternal.
 
 ---
 
-### 📎 Lisensi
+## 5. 🧩 Desain Konseptual, Logikal, dan Fisik
 
-Proyek ini dibuat untuk tujuan akademik dan edukasi. Silakan gunakan dan kembangkan dengan mencantumkan kredit pada kelompok penyusun.
+### 🌟 Star Schema
 
+```mermaid
+erDiagram
+    fakta_nilai_siswa ||--o{ dimensi_siswa : "id_siswa"
+    fakta_nilai_siswa ||--o{ dimensi_matapelajaran : "id_matpel"
+    fakta_nilai_siswa ||--o{ dimensi_guru : "id_guru"
+
+    fakta_nilai_siswa {
+        string id_nilai
+        string id_siswa
+        string id_matapelajaran
+        string id_guru
+        int nilai_ujian
+        int nilai_tugas
+        float nilai_rata_rata
+        string status_kelulusan
+    }
+
+    dimensi_siswa {
+        string id_siswa
+        string nama_siswa
+        string nisn
+        string jenis_kelamin
+        string kelas
+        int tahun_masuk
+        string nama_orangtua
+    }
+
+    dimensi_matapelajaran {
+        string id_matpel
+        string nama_matpel
+        string kategori
+        int tingkat
+        int kkm
+    }
+
+    dimensi_guru {
+        string id_guru
+        string nama_guru
+        string nip
+        string bidang_ajar
+        string status
+        int tahun_mengajar
+        string pendidikan
+    }
+```
+
+---
+
+## 6. 🏗️ Arsitektur Sistem
+
+```mermaid
+flowchart TD
+    subgraph "Sumber Data"
+        A1[Buku Induk Siswa]
+        A2[Daftar Hadir]
+        A3[Buku Nilai]
+    end
+
+    A1 --> B[Proses ETL via SQL]
+    A2 --> B
+    A3 --> B
+
+    B --> C[Data Warehouse
+Star Schema Model]
+
+    subgraph "Fakta & Dimensi"
+        C1[FAKTA: Fakta_Nilai_Siswa
+Nilai
+Status Kelulusan]
+        C2[DIM_Siswa
+Nama
+NISN
+Kelas]
+        C3[DIM_Matpel
+Kategori
+KKM]
+        C4[DIM_Guru
+NIP
+Status
+Pendidikan]
+    end
+
+    C --> C1
+    C1 --> C2
+    C1 --> C3
+    C1 --> C4
+
+    C1 --> D[View: View_Kinerja_Siswa_Kelulusan]
+
+    D --> E[Laporan, Visualisasi & Analitik]
+
+```
+
+---
+
+## 7. ⚙️ Proses Implementasi
+
+### Contoh Query SQL:
+
+```sql
+CREATE TABLE Dimensi_Siswa (
+  ID_Siswa VARCHAR(10) PRIMARY KEY,
+  Nama_Siswa VARCHAR(100),
+  NISN VARCHAR(20),
+  Jenis_Kelamin CHAR(1),
+  Kelas VARCHAR(10),
+  Tahun_Masuk INT,
+  Nama_Orangtua VARCHAR(100)
+);
+
+CREATE TABLE Fakta_Nilai_Siswa (
+  ID_Nilai VARCHAR(10) PRIMARY KEY,
+  ID_Siswa VARCHAR(10),
+  ID_MataPelajaran VARCHAR(10),
+  ID_Guru VARCHAR(10),
+  Nilai_Ujian INT,
+  Nilai_Tugas INT,
+  Nilai_Rata_Rata DECIMAL(5,2),
+  Status_Kelulusan VARCHAR(20),
+  FOREIGN KEY (ID_Siswa) REFERENCES Dimensi_Siswa(ID_Siswa)
+);
+```
+
+### Proses ETL:
+
+- **Extract**: Ambil data dari file Excel (Buku Induk, Absensi, Nilai)
+- **Transform**: Bersihkan data, hitung nilai rata-rata, validasi status
+- **Load**: Muat ke dalam tabel di SQL DBMS
+
+📂 Dataset: [bit.ly/DatasetSQL_DW_Kel9_RA](https://bit.ly/DatasetSQL_DW_Kel9_RA)
+
+---
+
+## 8. ✅ Hasil Implementasi
+
+- Query agregasi berhasil menampilkan rata-rata per status kelulusan
+- View berhasil menampilkan ringkasan siswa lulus dan tidak lulus
+- Struktur data terhubung antar dimensi dengan baik
+
+---
+
+## 9. 📉 Evaluasi
+
+**Berhasil:**
+- Star Schema & ETL dapat berjalan dengan dummy data
+- Efisiensi query meningkat dengan indexing & partisi
+
+**Kendala:**
+- Data real belum digunakan
+- Visualisasi dashboard belum terimplementasi
+
+---
+
+## 10. 🔮 Rencana Pengembangan
+
+- Tambahan fitur autentikasi pengguna (admin, guru, kepala sekolah)
+- Integrasi dashboard interaktif dengan Power BI / Streamlit
+- Penambahan fakta baru: kehadiran siswa, pelanggaran, kegiatan
+
+---
+
+## 11. 👥 Tim Proyek
+
+**Kelompok 9 - RA**  
+📍 Program Studi Sains Data, ITERA
+
+| Nama                          | NIM         | Peran       |
+|-------------------------------|-------------|-------------|
+| Dhea Amelia Putri             | 122450004   | Anggota     |
+| Marleta Cornelia Leander     | 122450092   | Anggota     |
+| Berliyana Kesuma Hati        | 121450086   | Anggota     |
+| Najla Juwairia               | 122450037   | Anggota     |
+| **Nurul Alfajar Gumel** ⭐    | 122450127   | Ketua Tim   |
+| Tarisah                      | 121450141   | Anggota     |
+
+---
+
+_“Data bukan hanya angka. Ia adalah cerminan kualitas pendidikan.”_
+
+Terima kasih telah membaca! 🎓📈
