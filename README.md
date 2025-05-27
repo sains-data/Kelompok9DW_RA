@@ -56,7 +56,7 @@ Proyek ini merupakan bagian dari tugas mata kuliah *Pergudangan Data* oleh **Kel
 | Marleta Cornelia Leander | 122450092 |
 | Berliyana Kesuma Hati | 121450086 |
 | Najla Juwairia | 122450037 |
-| **Nurul Alfajar Gumel** | **122450127** |
+| Nurul Alfajar Gumel | 122450127 |
 | Tarisah | 121450141 |
 
 ---
